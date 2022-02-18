@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+html {
+    font-size: 24px;
+    font-family: 'Unica One', cursive;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1rem 0;
+}
+
+#app h1 {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 8px;
+}
+
+.calculator{
+    margin: 1em;
+    padding: 17px;
+    border: 2px solid orange;
+    border-radius: 15px;
+    background-color: darkgray;
+    display: grid;
+    grid-template: 170px 10fr / 1fr;
+    grid-row-gap: 15px;
+}
+
+.display{
+    padding: 8px;
+    border: 2px solid orange;
+    border-radius: 5px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    background-color: cornflowerblue;
+    box-shadow: 0px 0px 8px 1px black inset; 
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.display-heading{
+    border-bottom: 1px dashed black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-working-nums{
+    display: flex;
+    justify-content: space-between;
+}
+
+.held-value{
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+.controls{
+    display: grid;
+    grid-template: repeat(6, 1fr) / repeat(7, 1fr);
+    grid-column-gap: 7px;
+    grid-row-gap: 7px;
+}
+
+.controls section button{
+    box-shadow: 0 0 12px -6px black;
+}
+
+.memory{
+    grid-area: 1 / 1 / 2 / 8;
+    display: grid;
+    grid-template: 1fr / repeat(7, 1fr);
+    grid-column-gap: 7px;
+}
+
+.memory .clear-all{
+    grid-column: span 2;
+}
+
+.memory .clear-entry{
+    grid-column: span 2;
+}
+
+.memory button{
+    background-color: #FFFF21;
+    border: 1px solid dimgray;
+    border-radius: 10px;
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.memory button:hover{
+    background-color: #F7F720;
+}
+
+.memory button:active{
+    background-color: #EAEA1E;
+}
+
+.digits{
+    grid-area: 2 / 4 / 7 / 7;
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    grid-column-gap: 7px;
+    grid-row-gap: 7px;
+}
+
+.digits button{
+    background-color: #FFFFFF;
+    border: 1px solid dimgray;
+    border-radius: 10px;
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.digits button:hover{
+    background-color: #F7F7F7;
+}
+
+.digits button:active{
+    background-color: #E5E5E5;
+}
+
+.digits button:last-child{
+    grid-column: span 2;
+}
+
+.operations{
+    grid-area: 2 / 7 / 7 / 8;
+    display: grid;
+    grid-template: repeat(5, 1fr) / 1fr;
+    grid-row-gap: 7px;
+}
+
+.specialOperations{
+    grid-area: 2 / 1 / 7 / 4;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(3, 1fr);
+    grid-column-gap: 7px;
+    grid-row-gap: 7px;
+}
+
+.operations button, .specialOperations button{
+    background-color: #FABB23;
+    border: 1px solid dimgray;
+    border-radius: 10px;
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.operations button:hover, .specialOperations button:hover{
+    background-color: #F7B825;
+}
+
+.operations button:active, .specialOperations button:active{
+    background-color: #E8AC22;
+}
+
+.operations .equals{
+    background-color: #FF5455;
+}
+
+.operations .equals:hover{
+    background-color: #ED5555;
+}
+
+.operations .equals:active{
+    background-color: #E55252;
+}
+
+/* Media Queries */
+@media screen and (orientation:portrait) {
+
+    #app h1{
+        display: none;
+    }
+
+    .calculator{
+        width: 80%;
+        height: 100%;
+    }
+
+    .memory{
+        grid-area: 1 / 1 / 2 / 8;
+        display: grid;
+        grid-template: 1fr / repeat(2, 1fr);
+        grid-column-gap: 7px;
+    }
+    
+    .memory .clear-all, .memory .clear-entry{
+        grid-column: span 1;
+    }
+
+    .memory-store, .memory-recover, .memory-clear{
+        display: none;
+    }
+
+    .digits{
+        grid-area: 2 / 1 / 7 / 5;
+        display: grid;
+        grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+        grid-column-gap: 7px;
+        grid-row-gap: 7px;
+    }
+
+    .operations{
+        grid-area: 2 / 5 / 7 / 8;
+        display: grid;
+        grid-template: repeat(5, 1fr) / 1fr;
+        grid-row-gap: 7px;
+    }
+
+    .specialOperations{
+        display: none;
+    }
+} 
+
+@media screen and (orientation:landscape) {
+    .calculator{
+        width: 50%;
+        height: 100%;
+        grid-template: 170px 10fr / 1fr;
+    }
+
+}
+
+@media screen and (max-width:900px){
+    #app h1{
+        display: none;
+    }
+    
+    .calculator{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:768px){
+    #app h1{
+        display: none;
+    }
+    
+    .calculator{
+        width: 90%;
+        height: 100%;
+    }
+}

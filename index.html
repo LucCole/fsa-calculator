@@ -1,0 +1,95 @@
+<html>
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Coda|Codystar|Jacques+Francois+Shadow|Unica+One&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="app.js"></script>
+    
+</head>
+
+<body>
+
+  <!-- MAIN -->
+  <main id="app">
+    <h1>
+      Calculator
+    </h1>
+    <div class="calculator">
+      <section class="display">
+        <div class="display-heading">
+          <div class="held-label">Running Total</div>
+          <div class="stored-number"></div>
+        </div>
+        <div class="held-value"></div>
+        <div class="display-working-nums">
+          <div class="next-operation"></div>
+          <div class="next-value"></div>
+        </div>
+      </section>
+      
+      <section class="controls">
+        <section class="memory">
+          <button class="memory-store">Memory Store</button>
+          <button class="memory-recover">Memory Recover</button>
+          <button class="memory-clear">Memory Clear</button>
+          <button class="clear-all">CLEAR</button>
+          <button class="clear-entry">CLEAR ENTRY</button>
+        </section>
+        <section class="operations">
+          <button class="add">&plus;</button>
+          <button class="subtract">&minus;</button>
+          <button class="multiply">&times;</button>
+          <button class="divide">/</button>
+          <button class="equals">&equals;</button>
+        </section>
+
+        <section class="specialOperations">
+          <button class="sign">&plus;/&minus;</button>
+          <button class="pi">PI</button>
+          <button class="inverse">(1/x)</button>
+          <button class="square">x2</button>
+          <button class="cube">x3</button>
+          <button class="squareRoot">&radic;</button>
+          <button class="cubeRoot">&#8731;</button>
+          <button class="toPower">x^y</button>
+          <button class="root">x&radic;y</button>
+
+          <button class="sine">SIN</button>
+          <button class="cosine">COS</button>
+          <button class="tangent">TAN</button>
+          <button class="arcSine">aSIN</button>
+          <button class="arcCosine">aCOS</button>
+          <button class="arcTangent">aTAN</button>
+        </section>
+
+        <section class="digits">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button class="decimal">.</button>
+          <button class="zero">0</button>
+        </section>
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>
